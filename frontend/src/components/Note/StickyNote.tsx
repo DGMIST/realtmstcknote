@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import Draggable from "react-draggable";
 import {
@@ -17,6 +18,17 @@ type NoteProps = {
   updatePosition: any;
   myNote: boolean;
   text: string;
+};
+
+const areEqual = (prevProps: NoteProps, nextProps: NoteProps) => {
+  if (
+    prevProps.posX !== nextProps.posX ||
+    prevProps.posY !== nextProps.posY ||
+    prevProps.text !== nextProps.text
+  ) {
+    return false;
+  }
+  return true;
 };
 
 const StickyNote = ({
@@ -59,6 +71,7 @@ const StickyNote = ({
     <>
       {myNote ? (
         <Draggable
+          key={id}
           defaultPosition={{ x: posX, y: posY }}
           onStart={handleDragEnd}
           onDrag={handleDragEnd}
@@ -80,6 +93,7 @@ const StickyNote = ({
         </Draggable>
       ) : (
         <Draggable
+          key={id}
           defaultPosition={{ x: posX, y: posY }}
           nodeRef={nodeRef}
           position={{ x: posX, y: posY }}
@@ -95,4 +109,4 @@ const StickyNote = ({
   );
 };
 
-export default React.memo(StickyNote);
+export default React.memo(StickyNote, areEqual);
