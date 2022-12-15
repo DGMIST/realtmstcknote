@@ -1,0 +1,91 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: white;
+  }
+}
+
+
+.fallingNote {
+  --size: 1vw;
+  width: 100px;
+  height: 50px;
+  background: white;
+  position: absolute;
+  top: -5vh;
+}
+
+@keyframes noteFall {
+  0% {
+    transform: translate3d(var(--left-ini), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--left-end), 110vh, 0);
+  }
+}
+
+.fallingNote:nth-child(1) {
+  --size: 0.2vw;
+  --left-ini: 7vw;
+  --left-end: -3vw;
+  left: 34vw;
+  animation: noteFall 8s linear infinite;
+  animation-delay: -9s;
+}
+
+.fallingNote:nth-child(2) {
+  --size: 1vw;
+  --left-ini: -4vw;
+  --left-end: 3vw;
+  left: 83vw;
+  animation: noteFall 8s linear infinite;
+  animation-delay: -2s;
+}
+
+.fallingNote:nth-child(3) {
+  --size: 0.2vw;
+  --left-ini: 10vw;
+  --left-end: -2vw;
+  left: 92vw;
+  animation: noteFall 12s linear infinite;
+  animation-delay: -7s;
+}
+
+.fallingNote:nth-child(4) {
+  --size: 0.8vw;
+  --left-ini: 5vw;
+  --left-end: -7vw;
+  left: 21vw;
+  animation: noteFall 11s linear infinite;
+  animation-delay: -5s;
+}
+
+.fallingNote:nth-child(5) {
+  --size: 0.8vw;
+  --left-ini: 3vw;
+  --left-end: -8vw;
+  left: 4vw;
+  animation: noteFall 13s linear infinite;
+  animation-delay: -8s;
+}
