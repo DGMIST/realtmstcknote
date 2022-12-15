@@ -166,37 +166,39 @@ function App() {
             ]}
           />
           <Modal open>
-            <IntroContainer>
-              <Card>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    createUser();
-                  }}
-                >
-                  <Box
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: 10,
+            <>
+              <IntroContainer>
+                <Card>
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      createUser();
                     }}
                   >
-                    <TextField
-                      value={userInput}
-                      onChange={(e) => handleUserInput(e.target.value)}
-                      type="text"
-                      required
-                      id="outlined-required"
-                      label="Your name"
-                      placeholder="Enter your name!"
-                    />
-                    <Button variant="contained" type="submit">
-                      Log in
-                    </Button>
-                  </Box>
-                </form>
-              </Card>
-            </IntroContainer>
+                    <Box
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 10,
+                      }}
+                    >
+                      <TextField
+                        value={userInput}
+                        onChange={(e) => handleUserInput(e.target.value)}
+                        type="text"
+                        required
+                        id="outlined-required"
+                        label="Your name"
+                        placeholder="Enter your name!"
+                      />
+                      <Button variant="contained" type="submit">
+                        Log in
+                      </Button>
+                    </Box>
+                  </form>
+                </Card>
+              </IntroContainer>
+            </>
           </Modal>
         </>
       )}
